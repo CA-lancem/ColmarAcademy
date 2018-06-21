@@ -12,15 +12,22 @@ section {
   padding: 2rem 1.5rem;
   width: auto;
   margin: 0 auto;
+  border-bottom: 1px dotted lightgray;
 }
 
-div {
+/* div {
   border: 1px solid green;
-}
+} */
 
 .section-title {
   margin-bottom: 2rem;
   /* text-align: center; */
+}
+
+@media screen and (max-width: 600px) {
+  .section-title {
+    margin-bottom: 1rem;
+  }
 }
 
 h1, h2, h3 {
@@ -101,43 +108,75 @@ header nav ul {
   display: flex;
 }
 
+
 nav li {
   padding: 0 0.5rem;
+}
+
+/* Mobile header */
+@media screen and (max-width: 600px) {
+  header .desktop {
+    display: none
+  }
+
+  header nav.mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 /* Banner Section */
 
 .banner {
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
   background-color: lightgray;
 }
 
+@media screen and (max-width: 600px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+}
+
 .banner .image-container {
   width: 60%;
-  /* height: auto; */
-  /* padding-right: 1.5rem; */
+  margin-right: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .banner .image-container {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .banner .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20rem;
-  padding-left: 1.5rem;
+  width: 40%;
+  /* margin-left: 1.5rem; */
 }
 
-.banner .content span {
-  margin-bottom: 2rem;
+@media screen and (max-width: 600px) {
+  .banner .content {
+    padding: 2rem 1rem;
+    width: 95%;
+  }
 }
 
 .banner h2 {
   font-size: 2.125rem;
+  margin-bottom: 2rem;
 }
 
 .banner h3 {
   font-size: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .banner .button {
@@ -159,7 +198,12 @@ nav li {
 }
 
 /* Hide testimonial on mobile */
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
+
+  #info-section {
+    padding: 1rem 1rem 2rem 1rem;
+  }
+
   #testimonial-container {
     display: none;
   }
@@ -169,7 +213,14 @@ nav li {
   display: flex;
   flex-direction: column;
   width: 40%;
-  justify-content: flex-start;
+  border-left: 1px dotted lightgray;
+}
+
+@media screen and (max-width: 600px) {
+  .infocards {
+    width: 100%;
+    border: none;
+  }
 }
 
 .infocard {
@@ -177,31 +228,38 @@ nav li {
   align-items: center;
   padding: 1rem;
   height: 33%;
+  border-top: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  /* width: auto; */
+}
+
+@media screen and (max-width: 600px) {
+  .infocard {
+    border: none;
+    align-items: flex-start;
+  }
 }
 
 .infocard .image-container {
   width: 35%;
-  /* height: auto; */
 }
 
 .infocard .content {
-  display: flex;
-  flex-direction: column;
+  margin-left: 1rem;
   width: 65%;
-  padding-left: 1.5rem;
 }
 
 .infocard .content a {
   color: blue;
 }
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 600px) {
   .infocard:last-child {
     background-color: lightgray;
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
   .infocards {
     width: auto;
   }
@@ -209,6 +267,7 @@ nav li {
   .infocard {
     flex-direction: column;
     padding-bottom: 4rem;
+    padding-top: 0;
   }
 
   .infocard .image-container {
@@ -217,7 +276,7 @@ nav li {
   }
 
   .infocard .content {
-    padding-left: 1rem;
+    margin-left: 1rem;
     line-height: 1.5rem;
   }
 
@@ -238,19 +297,43 @@ nav li {
   background-color: lightgray;
 }
 
+@media screen and (max-width: 600px) {
+  #courses-section {
+    background-color: white;
+  }
+}
+
 #courses-cta {
+  width: auto;
   display: flex;
-  justify-content: center;
-  align-content: flex-start;
+  justify-content: space-between;
+  align-content: space-between;
   flex-wrap: wrap;
-  margin: 0 3rem;
+  margin: 0 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  #course-cta {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+  }
 }
 
 .course {
   width: 30%;
   background-color: white;
-  margin: 2rem 1rem;
-  /* padding: 2rem 1rem; */
+  margin: 1rem;
+  padding: 1rem auto 1.5rem 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .course {
+    width: 90%;
+    margin: 0.5rem;
+    background-color: lightgray;
+  }
 }
 
 .course .content {
@@ -259,6 +342,13 @@ nav li {
 
 .course .image-container {
   width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .course .image-container,
+    .course p {
+      display: none;
+    }
 }
 
 /* Exhibits Section */
@@ -271,7 +361,6 @@ nav li {
 #exhibits-cta {
   display: flex;
   justify-content: center;
-  margin: auto 4.5rem;
   width: 100%;
 }
 
@@ -287,10 +376,14 @@ nav li {
 }
 
 /* Hide featured exhibit content on mobile */
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
+  #exhibits-section {
+    padding: 2rem 0 1.5rem 0;
+  }
+
   #exhibit-featured {
-    width: auto;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
   }
 
   #exhibit-featured .content{
@@ -310,7 +403,7 @@ nav li {
 }
 
 /* Hide exhibit cards on mobile */
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
   #exhibit-cards{
     display: none;
   }
@@ -323,22 +416,26 @@ nav li {
   padding: 1rem;
 }
 
+#exhibit-cards .exhibit:first-child {
+  background-color: lightgray;
+}
+
 .exhibit .image-container {
-    width: 35%;
+  width: 35%;
 }
 
 .exhibit .content {
   margin-left: 1rem;
-  width: auto;
+  width: 65%;
 }
 
 /* Footer section */
 footer {
   padding: 1rem 1.5rem 2rem 1.5rem;
-  border-top: 1px dotted lightgray;
+  /* border-top: 1px dotted lightgray; */
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
   footer {
     padding: 1rem;
   }
@@ -348,6 +445,7 @@ footer .content {
   display: flex;
   align-items: center;
   padding: 0;
+  font-size: 0.75rem;
 }
 
 footer .copyright {
@@ -361,7 +459,7 @@ footer .legal {
 }
 
 /* Hide legal items on mobile */
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
   footer .legal {
     display: none;
   }
